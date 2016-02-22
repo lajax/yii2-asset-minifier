@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/e21afaf6/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/7b17149d/style.css" rel="stylesheet">
+<script src="./assets/61b26c6e/jquery.js"></script>
+<script src="./assets/e21afaf6/js/bootstrap.js"></script>
+<script src="./assets/ac724ee/jssearch.js"></script>    <title>Combiner, lajax\assetminifier\Combiner - Yii Framework 2.0 API Documentation</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w58" class="navbar-inverse navbar-fixed-top navbar" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w58-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">Yii Framework 2.0 API Documentation</a></div><div id="w58-collapse" class="collapse navbar-collapse"><ul id="w59" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-3">
+                <div id="navigation" class="list-group"><a class="list-group-item active" href="#navigation-55" data-toggle="collapse" data-parent="#navigation">lajax\assetminifier <b class="caret"></b></a><div id="navigation-55" class="submenu panel-collapse collapse in"><a class="list-group-item active" href="./lajax-assetminifier-combiner.html">Combiner</a>
+<a class="list-group-item" href="./lajax-assetminifier-component.html">Component</a>
+<a class="list-group-item" href="./lajax-assetminifier-minifier.html">Minifier</a></div>
+<a class="list-group-item" href="#navigation-56" data-toggle="collapse" data-parent="#navigation">lajax\assetminifier\helpers <b class="caret"></b></a><div id="navigation-56" class="submenu panel-collapse collapse"><a class="list-group-item" href="./lajax-assetminifier-helpers-assetminifier.html">AssetMinifier</a></div>
+<a class="list-group-item" href="#navigation-57" data-toggle="collapse" data-parent="#navigation">lajax\assetminifier\minifiers <b class="caret"></b></a><div id="navigation-57" class="submenu panel-collapse collapse"><a class="list-group-item" href="./lajax-assetminifier-minifiers-clicssminifier.html">CliCssMinifier</a>
+<a class="list-group-item" href="./lajax-assetminifier-minifiers-clijsminifier.html">CliJsMinifier</a>
+<a class="list-group-item" href="./lajax-assetminifier-minifiers-climinifier.html">CliMinifier</a>
+<a class="list-group-item" href="./lajax-assetminifier-minifiers-minifierinterface.html">MinifierInterface</a>
+<a class="list-group-item" href="./lajax-assetminifier-minifiers-phpcssminifier.html">PhpCssMinifier</a>
+<a class="list-group-item" href="./lajax-assetminifier-minifiers-phpjsminifier.html">PhpJsMinifier</a>
+<a class="list-group-item" href="./lajax-assetminifier-minifiers-webcssminifier.html">WebCssMinifier</a>
+<a class="list-group-item" href="./lajax-assetminifier-minifiers-webjsminifier.html">WebJsMinifier</a>
+<a class="list-group-item" href="./lajax-assetminifier-minifiers-webminifier.html">WebMinifier</a></div></div>    </div>
+    <div class="col-md-9 api-content" role="main">
+        <h1>Class lajax\assetminifier\Combiner</h1>
+<div id="nav">
+    <a href="index.html">All Classes</a>
+            | <a href="#properties">Properties</a>
+                | <a href="#methods">Methods</a>
+            </div>
+
+<table class="summaryTable docClass table table-bordered">
+    <colgroup>
+        <col class="col-name" />
+        <col class="col-value" />
+    </colgroup>
+            <tr><th>Inheritance</th><td><a href="lajax-assetminifier-combiner.html">lajax\assetminifier\Combiner</a> &raquo;
+yii\base\Object</td></tr>
+                                        <tr><th>Available since version</th><td>1.0</td></tr>
+            </table>
+
+<div id="classDescription">
+    <p><strong>Class for concatenating asset files.</strong></p>
+    
+    </div>
+
+<a id="properties"></a>
+
+<div class="summary doc-property">
+<h2>Public Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summary-table table table-striped table-bordered table-hover">
+<colgroup>
+    <col class="col-property" />
+    <col class="col-type" />
+    <col class="col-description" />
+    <col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+        <tr id="$combinedFilesPath">
+        <td><a href="lajax-assetminifier-combiner.html#$combinedFilesPath-detail">$combinedFilesPath</a></td>
+        <td><a href="http://www.php.net/language.types.string">string</a></td>
+        <td>Parent library for combined asset files.</td>
+        <td><a href="lajax-assetminifier-combiner.html">lajax\assetminifier\Combiner</a></td>
+    </tr>
+            <tr id="$createGz">
+        <td><a href="lajax-assetminifier-combiner.html#$createGz-detail">$createGz</a></td>
+        <td><a href="http://www.php.net/language.types.boolean">boolean</a></td>
+        <td>Create the corresponding .</td>
+        <td><a href="lajax-assetminifier-combiner.html">lajax\assetminifier\Combiner</a></td>
+    </tr>
+            <tr id="$minifiedCss">
+        <td><a href="lajax-assetminifier-combiner.html#$minifiedCss-detail">$minifiedCss</a></td>
+        <td><a href="http://www.php.net/language.types.boolean">boolean</a></td>
+        <td>Enable minification of StyleSheet files.</td>
+        <td><a href="lajax-assetminifier-combiner.html">lajax\assetminifier\Combiner</a></td>
+    </tr>
+            <tr id="$minifiedJs">
+        <td><a href="lajax-assetminifier-combiner.html#$minifiedJs-detail">$minifiedJs</a></td>
+        <td><a href="http://www.php.net/language.types.boolean">boolean</a></td>
+        <td>Enable minification of JavaScript files.</td>
+        <td><a href="lajax-assetminifier-combiner.html">lajax\assetminifier\Combiner</a></td>
+    </tr>
+    </table>
+</div>
+
+<a id="methods"></a>
+
+<div class="summary doc-method">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summary-table table table-striped table-bordered table-hover">
+<colgroup>
+    <col class="col-method" />
+    <col class="col-description" />
+    <col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+                        <tr id="init()">
+        <td><a href="lajax-assetminifier-combiner.html#init()-detail">init()</a></td>
+        <td></td>
+        <td><a href="lajax-assetminifier-combiner.html">lajax\assetminifier\Combiner</a></td>
+    </tr>
+                    <tr id="process()">
+        <td><a href="lajax-assetminifier-combiner.html#process()-detail">process()</a></td>
+        <td>Method to concatenate asset files.</td>
+        <td><a href="lajax-assetminifier-combiner.html">lajax\assetminifier\Combiner</a></td>
+    </tr>
+                </table>
+</div>
+
+<div class="summary doc-method">
+<h2>Protected Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summary-table table table-striped table-bordered table-hover">
+<colgroup>
+    <col class="col-method" />
+    <col class="col-description" />
+    <col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+        <tr id="adjustCssUrl()">
+        <td><a href="lajax-assetminifier-combiner.html#adjustCssUrl()-detail">adjustCssUrl()</a></td>
+        <td>Adjusts CSS content allowing URL references pointing to the original resources.</td>
+        <td><a href="lajax-assetminifier-combiner.html">lajax\assetminifier\Combiner</a></td>
+    </tr>
+            <tr id="combineAssetBundle()">
+        <td><a href="lajax-assetminifier-combiner.html#combineAssetBundle()-detail">combineAssetBundle()</a></td>
+        <td>Combining asset files depending on type.</td>
+        <td><a href="lajax-assetminifier-combiner.html">lajax\assetminifier\Combiner</a></td>
+    </tr>
+            <tr id="combineAssetBundles()">
+        <td><a href="lajax-assetminifier-combiner.html#combineAssetBundles()-detail">combineAssetBundles()</a></td>
+        <td>Recursive method for grouping asset files.</td>
+        <td><a href="lajax-assetminifier-combiner.html">lajax\assetminifier\Combiner</a></td>
+    </tr>
+            <tr id="getAssetBundles()">
+        <td><a href="lajax-assetminifier-combiner.html#getAssetBundles()-detail">getAssetBundles()</a></td>
+        <td>Creating MinifierAsset bundles based on position.</td>
+        <td><a href="lajax-assetminifier-combiner.html">lajax\assetminifier\Combiner</a></td>
+    </tr>
+                <tr id="mergeCssFiles()">
+        <td><a href="lajax-assetminifier-combiner.html#mergeCssFiles()-detail">mergeCssFiles()</a></td>
+        <td>Combination and saving of StyleSheet files.</td>
+        <td><a href="lajax-assetminifier-combiner.html">lajax\assetminifier\Combiner</a></td>
+    </tr>
+            <tr id="mergeJsFiles()">
+        <td><a href="lajax-assetminifier-combiner.html#mergeJsFiles()-detail">mergeJsFiles()</a></td>
+        <td>Combination and saving of JavaScript files.</td>
+        <td><a href="lajax-assetminifier-combiner.html">lajax\assetminifier\Combiner</a></td>
+    </tr>
+                <tr id="requiresPjax()">
+        <td><a href="lajax-assetminifier-combiner.html#requiresPjax()-detail">requiresPjax()</a></td>
+        <td></td>
+        <td><a href="lajax-assetminifier-combiner.html">lajax\assetminifier\Combiner</a></td>
+    </tr>
+            <tr id="saveAssetFiles()">
+        <td><a href="lajax-assetminifier-combiner.html#saveAssetFiles()-detail">saveAssetFiles()</a></td>
+        <td>Method to concatenate and save combined Asset.</td>
+        <td><a href="lajax-assetminifier-combiner.html">lajax\assetminifier\Combiner</a></td>
+    </tr>
+            <tr id="saveFile()">
+        <td><a href="lajax-assetminifier-combiner.html#saveFile()-detail">saveFile()</a></td>
+        <td>Saving merged and combined asset files to disk.</td>
+        <td><a href="lajax-assetminifier-combiner.html">lajax\assetminifier\Combiner</a></td>
+    </tr>
+    </table>
+</div>
+
+<a id="events"></a>
+
+<a id="constants"></a>
+
+<h2>Property Details</h2>
+
+<div class="property-doc">
+
+    <div class="detail-header h3" id="$combinedFilesPath-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="lajax-assetminifier-combiner.html#$combinedFilesPath-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        $combinedFilesPath        <span class="detailHeaderTag small">
+            public                                    property
+                    </span>
+    </div>
+
+    <div class="signature"><a href="http://www.php.net/language.types.string">string</a> <a href="lajax-assetminifier-combiner.html#$combinedFilesPath-detail">$combinedFilesPath</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'/lajax-asset-minifier'</span></div>
+
+    <p>Parent library for combined asset files.</p>
+
+    
+
+    <div class="detail-header h3" id="$createGz-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="lajax-assetminifier-combiner.html#$createGz-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        $createGz        <span class="detailHeaderTag small">
+            public                                    property
+                    </span>
+    </div>
+
+    <div class="signature"><a href="http://www.php.net/language.types.boolean">boolean</a> <a href="lajax-assetminifier-combiner.html#$createGz-detail">$createGz</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">false</span></div>
+
+    <p>Create the corresponding .gz files for asset files.</p>
+
+    
+
+    <div class="detail-header h3" id="$minifiedCss-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="lajax-assetminifier-combiner.html#$minifiedCss-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        $minifiedCss        <span class="detailHeaderTag small">
+            public                                    property
+                    </span>
+    </div>
+
+    <div class="signature"><a href="http://www.php.net/language.types.boolean">boolean</a> <a href="lajax-assetminifier-combiner.html#$minifiedCss-detail">$minifiedCss</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">true</span></div>
+
+    <p>Enable minification of StyleSheet files.</p>
+
+    
+
+    <div class="detail-header h3" id="$minifiedJs-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="lajax-assetminifier-combiner.html#$minifiedJs-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        $minifiedJs        <span class="detailHeaderTag small">
+            public                                    property
+                    </span>
+    </div>
+
+    <div class="signature"><a href="http://www.php.net/language.types.boolean">boolean</a> <a href="lajax-assetminifier-combiner.html#$minifiedJs-detail">$minifiedJs</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">true</span></div>
+
+    <p>Enable minification of JavaScript files.</p>
+
+    
+</div>
+<h2>Method Details</h2>
+
+<div class="method-doc">
+
+    <div class="detail-header h3" id="adjustCssUrl()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="lajax-assetminifier-combiner.html#adjustCssUrl()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        adjustCssUrl()
+        <span class="detail-header-tag small">
+            protected            method
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p><strong>Adjusts CSS content allowing URL references pointing to the original resources.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><a href="http://www.php.net/language.types.string">string</a> <strong><a href="lajax-assetminifier-combiner.html#adjustCssUrl()-detail">adjustCssUrl</a></strong><span style="color: #0000BB"></span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">$cssContent</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$inputFilePath</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$outputFilePath&nbsp;</span><span style="color: #007700">)</span></td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$cssContent</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Source CSS content.</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$inputFilePath</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Input CSS file name.</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$outputFilePath</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Output CSS file name.</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Adjusted CSS content.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="combineAssetBundle()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="lajax-assetminifier-combiner.html#combineAssetBundle()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        combineAssetBundle()
+        <span class="detail-header-tag small">
+            protected            method
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p><strong>Combining asset files depending on type.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature">void <strong><a href="lajax-assetminifier-combiner.html#combineAssetBundle()-detail">combineAssetBundle</a></strong><span style="color: #0000BB"></span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">$assetBundle</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$property</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$position&nbsp;</span><span style="color: #007700">)</span></td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$assetBundle</span></td>
+                  <td class="param-type-col">\yii\web\AssetBundle</td>
+                  <td class="param-desc-col"><p>The AssetBundle to be processed.</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$property</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>The type of the assets to be processed, <code>css</code> or <code>js</code>.</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$position</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.integer">integer</a></td>
+                  <td class="param-desc-col"><p>The position of the AssetBundle.</p>
+</td>
+                </tr>
+                                                </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="combineAssetBundles()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="lajax-assetminifier-combiner.html#combineAssetBundles()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        combineAssetBundles()
+        <span class="detail-header-tag small">
+            protected            method
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p><strong>Recursive method for grouping asset files.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature">void <strong><a href="lajax-assetminifier-combiner.html#combineAssetBundles()-detail">combineAssetBundles</a></strong><span style="color: #0000BB"></span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">$name&nbsp;</span><span style="color: #007700">)</span></td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$name</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>The name of the processed AssetBundle.</p>
+</td>
+                </tr>
+                                                </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="getAssetBundles()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="lajax-assetminifier-combiner.html#getAssetBundles()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        getAssetBundles()
+        <span class="detail-header-tag small">
+            protected            method
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p><strong>Creating MinifierAsset bundles based on position.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature">\yii\web\AssetBundle <strong><a href="lajax-assetminifier-combiner.html#getAssetBundles()-detail">getAssetBundles</a></strong><span style="color: #0000BB"></span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">$position&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null&nbsp;</span><span style="color: #007700">)</span></td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$position</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Position of asset files.</p>
+</td>
+                </tr>
+                                                </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="init()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="lajax-assetminifier-combiner.html#init()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        init()
+        <span class="detail-header-tag small">
+            public            method
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p><strong></strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature">void <strong><a href="lajax-assetminifier-combiner.html#init()-detail">init</a></strong><span style="color: #0000BB"></span><span style="color: #007700">(&nbsp;)</span></td></tr>
+            </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="mergeCssFiles()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="lajax-assetminifier-combiner.html#mergeCssFiles()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        mergeCssFiles()
+        <span class="detail-header-tag small">
+            protected            method
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p><strong>Combination and saving of StyleSheet files.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature">void <strong><a href="lajax-assetminifier-combiner.html#mergeCssFiles()-detail">mergeCssFiles</a></strong><span style="color: #0000BB"></span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">$position</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$files&nbsp;</span><span style="color: #007700">)</span></td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$position</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.integer">integer</a></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$files</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>List of asset files to be combined.</p>
+</td>
+                </tr>
+                                                </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="mergeJsFiles()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="lajax-assetminifier-combiner.html#mergeJsFiles()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        mergeJsFiles()
+        <span class="detail-header-tag small">
+            protected            method
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p><strong>Combination and saving of JavaScript files.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature">void <strong><a href="lajax-assetminifier-combiner.html#mergeJsFiles()-detail">mergeJsFiles</a></strong><span style="color: #0000BB"></span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">$position</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$files&nbsp;</span><span style="color: #007700">)</span></td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$position</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.integer">integer</a></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$files</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>List of asset files to be combined.</p>
+</td>
+                </tr>
+                                                </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="process()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="lajax-assetminifier-combiner.html#process()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        process()
+        <span class="detail-header-tag small">
+            public            method
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p><strong>Method to concatenate asset files.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature">void <strong><a href="lajax-assetminifier-combiner.html#process()-detail">process</a></strong><span style="color: #0000BB"></span><span style="color: #007700">(&nbsp;)</span></td></tr>
+            </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="requiresPjax()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="lajax-assetminifier-combiner.html#requiresPjax()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        requiresPjax()
+        <span class="detail-header-tag small">
+            protected            method
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p><strong></strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><a href="http://www.php.net/language.types.boolean">boolean</a> <strong><a href="lajax-assetminifier-combiner.html#requiresPjax()-detail">requiresPjax</a></strong><span style="color: #0000BB"></span><span style="color: #007700">(&nbsp;)</span></td></tr>
+                                                <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.boolean">boolean</a></td>
+                  <td class="param-desc-col"><p>Whether the current request requires pjax response from this widget.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="saveAssetFiles()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="lajax-assetminifier-combiner.html#saveAssetFiles()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        saveAssetFiles()
+        <span class="detail-header-tag small">
+            protected            method
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p><strong>Method to concatenate and save combined Asset.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature">void <strong><a href="lajax-assetminifier-combiner.html#saveAssetFiles()-detail">saveAssetFiles</a></strong><span style="color: #0000BB"></span><span style="color: #007700">(&nbsp;)</span></td></tr>
+            </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="saveFile()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="lajax-assetminifier-combiner.html#saveFile()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        saveFile()
+        <span class="detail-header-tag small">
+            protected            method
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p><strong>Saving merged and combined asset files to disk.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature">void <strong><a href="lajax-assetminifier-combiner.html#saveFile()-detail">saveFile</a></strong><span style="color: #0000BB"></span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">$path</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$content&nbsp;</span><span style="color: #007700">)</span></td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$path</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Path of the new asset file.</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$content</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Content of the new asset file.</p>
+</td>
+                </tr>
+                                                </table>
+
+<!--	-->
+</div>
+        </div>
+</div>
+
+<script type="text/javascript">
+    /*<![CDATA[*/
+    $("a.toggle").on('click', function () {
+        var $this = $(this);
+        if ($this.hasClass('properties-hidden')) {
+            $this.text($this.text().replace(/Show/,'Hide'));
+            $this.parents(".summary").find(".inherited").show();
+            $this.removeClass('properties-hidden');
+        } else {
+            $this.text($this.text().replace(/Hide/,'Show'));
+            $this.parents(".summary").find(".inherited").hide();
+            $this.addClass('properties-hidden');
+        }
+
+        return false;
+    });
+    /*
+     $(".sourceCode a.show").toggle(function () {
+     $(this).text($(this).text().replace(/show/,'hide'));
+     $(this).parents(".sourceCode").find("div.code").show();
+     },function () {
+     $(this).text($(this).text().replace(/hide/,'show'));
+     $(this).parents(".sourceCode").find("div.code").hide();
+     });
+     $("a.sourceLink").click(function () {
+     $(this).attr('target','_blank');
+     });
+     */
+    /*]]>*/
+</script>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Mon, 22 Feb 2016 15:39:36 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script type="text/javascript">jQuery(document).ready(function () {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) shiftWindow();
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>
