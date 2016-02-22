@@ -67,8 +67,6 @@ class Combiner extends \yii\base\Object
 
     /**
      * Method to concatenate asset files.
-     * @param bool $minifiedJs Whether the JS files are minified.
-     * @param bool $minifiedCss Whether the CSS files are minified.
      */
     public function process()
     {
@@ -124,8 +122,6 @@ class Combiner extends \yii\base\Object
 
     /**
      * Method to concatenate and save combined Asset.
-     * @param bool $minifiedJs Whether the JS files are minified.
-     * @param bool $minifiedCss Whether the CSS files are minified.
      */
     protected function saveAssetFiles()
     {

@@ -18,6 +18,9 @@ class CliCssMinifier extends CliMinifier
      */
     public $command;
 
+    /**
+     * @inheritdoc
+     */
     public function init()
     {
 
