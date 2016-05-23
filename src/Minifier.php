@@ -4,6 +4,7 @@ namespace lajax\assetminifier;
 
 use Yii;
 use yii\helpers\Url;
+use yii\helpers\FileHelper;
 use lajax\assetminifier\helpers\AssetMinifier;
 
 /**
@@ -54,12 +55,47 @@ class Minifier extends \yii\base\Object
     public $createGz = false;
 
     /**
+     * @var boolean whether the directory being published should be copied even if
+     * it is found in the target directory. This option is used only when publishing a directory.
+     * You may want to set this to be `true` during the development stage to make sure the published
+     * directory is always up-to-date. Do not set this to true on production servers as it will
+     * significantly degrade the performance.
+     */
+    public $forceCopy;
+
+    /**
+     * @var string
+     */
+    private $_webroot;
+
+    /**
+     * @var string
+     */
+    private $_web;
+
+    /**
+     * @inheritdoc
+     */
+    public function init()
+    {
+        parent::init();
+
+        if ($this->forceCopy === null) {
+            $this->forceCopy = Yii::$app->assetManager->forceCopy;
+        }
+
+        $this->_webroot = Yii::getAlias('@webroot/assets');
+        $this->_web = Yii::getAlias('@web/assets');
+    }
+
+    /**
      * Minification of js files of the assetBundle received as a parameter.
      * @param \yii\web\AssetBundle $assetBundle
      * @return \yii\web\AssetBundle
      */
     public function minifyJs($assetBundle)
     {
+
         foreach ($assetBundle->js as $key => $js) {
             $assetBundle->js[$key] = $this->minify($assetBundle, $js);
         }
@@ -96,21 +132,31 @@ class Minifier extends \yii\base\Object
                 $sourcePath = $bundle->basePath;
             }
 
-            $sourcePath .= '/' . $filename;
+            $this->refreshAssetBundle($bundle, $sourcePath, dirname($filename));
 
+            $sourcePath = $bundle->basePath . '/' . $filename;
             $extension = pathinfo($filename, PATHINFO_EXTENSION);
             $filename = preg_replace('/\.(min\.)*' . preg_quote($extension, '/') . '$/i', '.min.' . $extension, $filename);
-            $minPath = $bundle->basePath . '/' . $filename;
-            if (!file_exists($minPath) || filemtime($sourcePath) > filemtime($minPath)) {
+            $minPath = "{$bundle->basePath}/$filename";
+            if ($this->testFile($minPath, $sourcePath)) {
                 file_put_contents($minPath, $this->getMinifierByExtension($extension)->minify($sourcePath));
 
-                if ($this->createGz) {
-                    $this->_createGzFile($minPath);
-                }
+                $this->createGzFile($minPath);
             }
         }
 
         return $filename;
+    }
+
+    /**
+     * 
+     * @param string $minFile
+     * @param string $srcFile
+     * @return boolean
+     */
+    protected function testFile($minFile, $srcFile)
+    {
+        return !file_exists($minFile) || filemtime($srcFile) > filemtime($minFile);
     }
 
     /**
@@ -127,9 +173,87 @@ class Minifier extends \yii\base\Object
      * Creating compressed .gz version of the file in path.
      * @param string $path
      */
-    private function _createGzFile($path)
+    protected function createGzFile($path)
     {
-        file_put_contents($path . '.gz', gzencode(file_get_contents($path), 9), LOCK_EX);
+        if ($this->createGz) {
+            file_put_contents($path . '.gz', gzencode(file_get_contents($path), 9), LOCK_EX);
+        }
+    }
+
+    /**
+     * 
+     * @param \yii\web\AssetBundle $assetBundle
+     * @param string $src
+     * @param string $subDir
+     * @return string
+     */
+    protected function refreshAssetBundle($assetBundle, $src, $subDir)
+    {
+        if ($assetBundle->baseUrl === '') {
+            $dir = $this->hash($assetBundle->basePath, $subDir);
+            $assetBundle->basePath = "{$this->_webroot}/$dir";
+            $assetBundle->baseUrl = "{$this->_web}/$dir";
+
+            if ($this->forceCopy || !is_dir($assetBundle->basePath)) {
+                $this->copyDirectory($src, $assetBundle->basePath);
+            }
+        }
+    }
+
+    /**
+     * 
+     * @param string $src
+     * @param string $dst
+     */
+    protected function copyDirectory($src, $dst)
+    {
+        if ($src === $dst || strpos($dst, $src) === 0) {
+            foreach ($this->findDirs($src, $dst) as $dir => $src) {
+                FileHelper::copyDirectory($src, $dst . '/' . $dir);
+            }
+        } else {
+            FileHelper::copyDirectory($src, $dst);
+        }
+    }
+
+    /**
+     * 
+     * @param string $path
+     * @param string $src
+     * @return string
+     */
+    protected function findDirs($path, $src)
+    {
+
+        $dirs = [];
+        foreach (scandir($path) as $dir) {
+            if ($dir === '.' || $dir === '..' || is_file($path . '/' . $dir) || $path . '/' . $dir === $src || strpos($src, $path . '/' . $dir) === 0) {
+                continue;
+            }
+
+            $dirs[$dir] = $path . '/' . $dir;
+        }
+
+        return $dirs;
+    }
+
+    /**
+     * Generate a CRC32 hash for the directory path. Collisions are higher
+     * than MD5 but generates a much smaller hash string.
+     * @param string $path string to be hashed.
+     * @return string hashed string.
+     */
+    protected function hash($path)
+    {
+        $string = '';
+        foreach ($this->findDirs($path, $this->_webroot) as $dir) {
+            $string .= $dir . filemtime($dir);
+            foreach (FileHelper::findFiles($dir, ['only' => ['*.js', '*.css']]) as $file) {
+                $string .= $file . filemtime($file);
+            }
+        }
+
+        return sprintf('%x', crc32($path . $string . Yii::getVersion()));
     }
 
 }

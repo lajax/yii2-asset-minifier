@@ -65,11 +65,11 @@ class Component extends \yii\base\Object
         Yii::$app->view->on(View::EVENT_END_BODY, function () {
             $this->process();
         });
-        
+
         if (is_array($this->minifier)) {
             $this->minifier['createGz'] = $this->createGz;
         }
-        
+
         if (!$this->combiner || is_array($this->combiner)) {
             $this->combiner['createGz'] = $this->createGz;
             $this->combiner['minifiedJs'] = isset($this->combiner['minifiedJs']) ? $this->combiner['minifiedJs'] : $this->minifyJs;
