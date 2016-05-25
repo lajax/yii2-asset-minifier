@@ -74,7 +74,7 @@ Usage
 
 ####AVAILABLE MINIFIERS:
 
-* #WEB:#
+* #WEB:
 
 ```php
 'js' => [                           // minify js via web API
@@ -87,7 +87,7 @@ Usage
 ]
 ```
 
-* #PHP (*Default minifiers*):#
+* #PHP (*Default minifiers*):
 
 ```php
 'js' => [                                        // Default JS minifier.
@@ -122,7 +122,7 @@ Usage
 ]
 ```
 
-* #CLI:#
+* #CLI:
 
 ```php
 'js' => [
@@ -157,7 +157,7 @@ Usage
 ###Serving *.js.gz and *.css.gz files instead of *.js or *.css in Nginx:
 
 ```
-gzip_static on | of | always
+gzip_static on | off | always
 ```
 
 [Nginx gzip static module](http://nginx.org/en/docs/http/ngx_http_gzip_static_module.html)
