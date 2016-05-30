@@ -95,12 +95,7 @@ class Minifier extends \yii\base\Object
      */
     public function minifyJs($assetBundle)
     {
-
-        foreach ($assetBundle->js as $key => $js) {
-            $assetBundle->js[$key] = $this->minify($assetBundle, $js);
-        }
-
-        return $assetBundle;
+        return $this->minifyAssetBundleFiles($assetBundle, 'js');
     }
 
     /**
@@ -110,8 +105,28 @@ class Minifier extends \yii\base\Object
      */
     public function minifyCss($assetBundle)
     {
-        foreach ($assetBundle->css as $key => $css) {
-            $assetBundle->css[$key] = $this->minify($assetBundle, $css);
+        return $this->minifyAssetBundleFiles($assetBundle, 'css');
+    }
+
+    /**
+     *
+     * @param type $assetBundle
+     * @param string $fileType css|js
+     */
+    protected function minifyAssetBundleFiles($assetBundle, $fileType)
+    {
+        foreach ($assetBundle->{$fileType} as $key => $options) {
+            $hasOptions = is_array($options);
+            $file = $hasOptions ? array_shift($options) : $options;
+            $minFile = $this->minify($assetBundle, $file);
+
+            if ($hasOptions) {
+                array_unshift($options, $minFile);
+            } else {
+                $options = $minFile;
+            }
+
+            $assetBundle->{$fileType}[$key] = $options;
         }
 
         return $assetBundle;
@@ -121,7 +136,7 @@ class Minifier extends \yii\base\Object
      * Function performing the minification of asset files.
      * @param \yii\web\AssetBundle $bundle
      * @param string $filename
-     * @return string
+     * @return string The path of the minified file.
      */
     protected function minify($bundle, $filename)
     {
