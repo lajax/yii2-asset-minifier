@@ -108,6 +108,10 @@ class Combiner extends \yii\base\Object
     protected function combineAssetBundle($assetBundle, $property, $position)
     {
         foreach ($assetBundle->$property as $filename) {
+            if (is_array($filename)) {
+                $filename = array_shift($filename);
+            }
+
             if (Url::isRelative($filename)) {
                 $path = $assetBundle->basePath . '/' . $filename;
                 $this->_files[$position][$property][$path . @filemtime($path)] = [
