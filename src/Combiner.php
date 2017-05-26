@@ -74,7 +74,10 @@ class Combiner extends \yii\base\Object
         foreach (array_keys(Yii::$app->view->assetBundles) as $name) {
             $this->combineAssetBundles($name);
         }
-
+        // If empty position is not created, do it now for CSS
+        if (!isset($this->_assetBundles[''])) {
+            $this->getAssetBundles();
+        }
         $this->saveAssetFiles();
     }
 
