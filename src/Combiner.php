@@ -37,6 +37,16 @@ class Combiner extends \yii\base\Object
     public $combinedFilesPath = '/lajax-asset-minifier';
 
     /**
+     * @var string the Web-accessible directory that contains the asset files in this bundle.
+     */
+    public $basePath;
+
+    /**
+     * @var string the base URL for the relative asset files listed in [[js]] and [[css]].
+     */
+    public $baseUrl;
+
+    /**
      * @var array List of JavaScript és StyleSheet files grouped by positions.
      */
     private $_files = [];
@@ -52,8 +62,13 @@ class Combiner extends \yii\base\Object
     public function init()
     {
         parent::init();
-
-        FileHelper::createDirectory(Yii::getAlias('@webroot/assets' . $this->combinedFilesPath), 0777);
+        if(empty($this->basePath)) {
+            $this->basePath = \Yii::$app->assetManager->basePath . '/' . $this->combinedFilesPath;
+        }
+        if(empty($this->baseUrl)) {
+            $this->baseUrl = \Yii::$app->assetManager->baseUrl . '/' . $this->combinedFilesPath;
+        }
+        FileHelper::createDirectory(Yii::getAlias($this->basePath), 0777);
     }
 
     /**
@@ -213,8 +228,8 @@ class Combiner extends \yii\base\Object
     {
         if (!isset($this->_assetBundles[$position])) {
             $config = [
-                'basePath' => Yii::getAlias('@webroot/assets' . $this->combinedFilesPath),
-                'baseUrl' => Yii::getAlias('@web/assets' . $this->combinedFilesPath)
+                'basePath' => Yii::getAlias($this->basePath),
+                'baseUrl' => Yii::getAlias($this->baseUrl)
             ];
 
             if ($position) {
@@ -223,7 +238,6 @@ class Combiner extends \yii\base\Object
 
             $this->_assetBundles[$position] = new AssetBundle($config);
         }
-
         return $this->_assetBundles[$position];
     }
 
