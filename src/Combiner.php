@@ -49,12 +49,12 @@ class Combiner extends \yii\base\Object
     /**
      * @var array List of JavaScript és StyleSheet files grouped by positions.
      */
-    private $_files = [];
+    protected $_files = [];
 
     /**
      * @var \yii\web\AssetBundle[] List of AssetBundle objects handling combined files.
      */
-    private $_assetBundles = [];
+    protected $_assetBundles = [];
 
     /**
      * @inheritdoc
