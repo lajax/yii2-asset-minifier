@@ -18,8 +18,8 @@
         "yiisoft/yii2": "*",
         "natxet/cssmin":"3.*",
         "tedivm/jshrink":"1.*",
-        "packagist/yuicompressor-bin":"*",
-        "packagist/closurecompiler-bin":"*"
+        "packagelist/yuicompressor-bin":"*",
+        "packagelist/closurecompiler-bin":"*"
     },
     "autoload": {
         "psr-4": {
