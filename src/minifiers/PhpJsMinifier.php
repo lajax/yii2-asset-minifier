@@ -10,7 +10,7 @@ use JShrink\Minifier;
  * @author Lajos Molnár <lajax.m@gmail.com>
  * @since 1.0
  */
-class PhpJsMinifier extends \yii\base\Object implements MinifierInterface
+class PhpJsMinifier extends \yii\base\BaseObject implements MinifierInterface
 {
 
     /**

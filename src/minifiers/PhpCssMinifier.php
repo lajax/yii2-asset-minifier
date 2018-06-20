@@ -10,7 +10,7 @@ use CssMin;
  * @author Lajos Molnár <lajax.m@gmail.com>
  * @since 1.0
  */
-class PhpCssMinifier extends \yii\base\Object implements MinifierInterface
+class PhpCssMinifier extends \yii\base\BaseObject implements MinifierInterface
 {
 
     /**
