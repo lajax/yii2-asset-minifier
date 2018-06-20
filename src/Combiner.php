@@ -13,7 +13,7 @@ use yii\web\AssetBundle;
  * @author Lajos Molnár <lajax.m@gmail.com>
  * @since 1.0
  */
-class Combiner extends \yii\base\Object
+class Combiner extends \yii\base\BaseObject
 {
 
     /**

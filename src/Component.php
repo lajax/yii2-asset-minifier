@@ -23,7 +23,7 @@ use lajax\assetminifier\helpers\AssetMinifier;
  * @author Lajos Molnár <lajax.m@gmail.com>
  * @since 1.0
  */
-class Component extends \yii\base\Object
+class Component extends \yii\base\BaseObject
 {
 
     /**

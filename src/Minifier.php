@@ -13,7 +13,7 @@ use lajax\assetminifier\helpers\AssetMinifier;
  * @author Lajos Molnár <lajax.m@gmail.com>
  * @since 1.0
  */
-class Minifier extends \yii\base\Object
+class Minifier extends \yii\base\BaseObject
 {
 
     /**
